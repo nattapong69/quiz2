@@ -40,9 +40,26 @@ function role(req, res){
     });      
 };
 
+function expired(req, res){    
+    var expired = req.params.expired; 
+    var query;
+    if(expired=="true") {  
+        query={ expired: true }; 
+    }
+    else{
+        query={ expired: false };
+    }   
+    db.collection("users").find(query).toArray(function (err, result) {
+    if (err) throw err;
+        console.log(result);                     
+        res.json(result);
+    });      
+};
+
 module.exports = {
     findAll: findAll,
     search:  search,
-    role: role
+    role: role,
+    expired:  expired 
     };
 

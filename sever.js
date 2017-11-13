@@ -17,7 +17,8 @@ function logger(req, res, next){
 
 app.get('/users', customer.findAll);
 app.get('/users/search', customer.search);
-app.get('/users/role/:role', customer.role);  
+app.get('/users/role/:role', customer.role); 
+app.get('/users/expired/:expired', customer.expired); 
 
 app.listen(3000); //server รันอยู่ที่ พอดไหน
 console.log('server is runing at http://localhost:3000');
