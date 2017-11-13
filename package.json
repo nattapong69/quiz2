@@ -5,7 +5,8 @@
   "main": "insert.js",
   "dependencies": {
     "express": "^4.16.2",
-    "mongodb": "^2.2.33"
+    "mongodb": "^2.2.33",
+    "nodemon": "^1.12.1"
   },
   "devDependencies": {},
   "scripts": {
