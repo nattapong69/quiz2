@@ -21,26 +21,23 @@ function findAll(req ,res){
 }
 
 function search(req, res){
-    //app.get('/users/search', (req, res) => {
-            var fname = req.query.fname;      
-              var query = { first_name: fname };
-              db.collection("users").find(query).toArray(function (err, result) {
-                if (err) throw err;
-                console.log(result);
-                db.close();           
-                res.json(result);
-              });      
+     var fname = req.query.fname;      
+        var query = { first_name: fname };
+        db.collection("users").find(query).toArray(function (err, result) {
+        if (err) throw err;
+            console.log(result);                       
+            res.json(result);
+    });      
 };
 
 function role(req, res){    
-        var role = req.params.role;      
-        var query = { role: role };
-        db.collection("users").find(query).toArray(function (err, result) {
-        if (err) throw err;
-            console.log(result);
-            db.close();           
-            res.json(result);
-        });      
+    var role = req.params.role;      
+    var query = { role: role };
+    db.collection("users").find(query).toArray(function (err, result) {
+    if (err) throw err;
+        console.log(result);                     
+        res.json(result);
+    });      
 };
 
 module.exports = {
